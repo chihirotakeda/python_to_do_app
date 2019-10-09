@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To do</title>
+</head>
+<body>
+<h1>ToDo App</h1>
+<h2>New Item</h2>
+<form method="post" action="/list">
+    <input type="text" name="add_item" placeholder="add item">
+    <input type="submit" value="add">
+</form>
+
+<h2>List</h2>
+<table border="1">
+    %for item in item_list:
+    <tr>
+        <td>{{item["id"]}}</td>
+        <td>{{item["name"]}}</td>
+        <td><a href="/del/{{item['id']}}">remove</a></td>
+    </tr>
+    %end
+</table>
+</body>
+</html>
